@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireMe Pro – Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon1.png">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>HireMe Pro</h1>
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="add-job.html">Add Job</a>
+            <a href="analytics.html">Analytics</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="top-bar">
+            <h2>Your Job Applications</h2>
+            <button id="theme-btn">🌙 Dark Mode</button>
+        </div>
+
+        <input type="text" id="searchInput" placeholder="Search by company or role…" class="search-box">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="jobList"></tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics – HireMe Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/png" href="images/favicon2.png">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>HireMe Pro</h1>
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="add-job.html" class="active">Add Job</a>
+            <a href="analytics.html">Analytics</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="top-bar">
+            <h2>Job Application Analytics</h2>
+            <button id="theme-btn">🌙 Dark Mode</button>
+        </div>
+
+        <div class="chart-box">
+            <canvas id="statusChart"></canvas>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

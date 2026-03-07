@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Job – HireMe Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body class="light">
+
+    <nav class="navbar">
+        <h1>HireMe Pro</h1>
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="add-job.html" class="active">Add Job</a>
+            <a href="analytics.html">Analytics</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="top-bar">
+            <h2>Add New Job Application</h2>
+            <button id="theme-btn">🌙 Dark Mode</button>
+        </div>
+
+        <form id="jobForm">
+            <input type="text" id="company" placeholder="Company Name" required>
+            <input type="text" id="role" placeholder="Job Role" required>
+
+            <select id="status">
+                <option>Applied</option>
+                <option>Interview Scheduled</option>
+                <option>In Progress</option>
+                <option>Selected</option>
+                <option>Rejected</option>
+            </select>
+
+            <input type="date" id="date" required>
+            <textarea id="notes" placeholder="Notes (optional)"></textarea>
+            <button type="submit" class="btn">Save Job</button>
+        </form>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
