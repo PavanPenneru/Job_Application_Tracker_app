@@ -1,3 +1,5 @@
+
+
 // Get LocalStorage Data
 function getJobs() {
     return JSON.parse(localStorage.getItem("jobs") || "[]");
@@ -110,36 +112,23 @@ if (document.getElementById("statusChart")) {
     });
 }
 
-const themeBtn = document.getElementById("theme-btn");
-const body = document.body;
+const themeBtn = document.getElementById('theme-btn');
 
-if (themeBtn) {
+// Load saved theme on page load
+const savedTheme = localStorage.getItem('theme') || 'light';
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+}
+updateThemeBtn(savedTheme === 'dark');
 
-    themeBtn.addEventListener("click", () => {
+themeBtn?.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');  // toggles on BODY
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeBtn(isDark);
+});
 
-        body.classList.toggle("dark");
-        body.classList.toggle("light");
-
-        if (body.classList.contains("dark")) {
-            themeBtn.textContent = "☀️ Light Mode";
-            localStorage.setItem("theme", "dark");
-        } else {
-            themeBtn.textContent = "🌙 Dark Mode";
-            localStorage.setItem("theme", "light");
-        }
-
-    });
-
-    window.onload = () => {
-        const savedTheme = localStorage.getItem("theme");
-
-        if (savedTheme === "dark") {
-            body.classList.add("dark");
-            themeBtn.textContent = "☀️ Light Mode";
-        } else {
-            body.classList.add("light");
-            themeBtn.textContent = "🌙 Dark Mode";
-        }
-    };
+function updateThemeBtn(isDark) {
+    if (!themeBtn) return;
+    themeBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
 }
 
